@@ -33,6 +33,8 @@ const Registro = () => {
 
     try {
       var pass = Math.floor(Math.random()*9999)+1000
+      const conv = pass.toString();
+     
       const db = firebase.firestore()
       const nuevo_r = {
         id : cc,
@@ -41,9 +43,9 @@ const Registro = () => {
         fecha : fechan,
         sexo : sexo,
         eps : eps,
-        correo_: correo,
+        correo: correo,
         tel : cel,
-        clave : pass
+        clave : conv
       }
 
       db.collection('pacientes').add(nuevo_r)
@@ -51,12 +53,12 @@ const Registro = () => {
         ...lista,
         {
           id:cc,
-          nombre_ : nombre,
+          nombre : nombre,
           apellido : apellido,
           fecha : fechan,
           sexo : sexo,
           eps : eps,
-          clave : pass,
+          clave : conv,
           correo : correo,
           tel : cel,
           

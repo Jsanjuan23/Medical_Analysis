@@ -45,10 +45,14 @@ const Login = () => {
         }
       
       try{
+        
         const user = lista.find(dato => dato.id === cc);
+
+
         if (user.id === cc && user.clave===pass){
           setVal(false)
         }else{
+         
             swal({
                 title: "Error",
                 text: "Por favor, verifique los datos ingresados.",
